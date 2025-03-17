@@ -86,8 +86,12 @@
         android:backgroundTint="#515f"
         />
     <TextView
+        android:id="@+id/TextViewpodsumowanie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""/>
+        android:text=""
+        android:textStyle="bold"
+        android:textSize="10dp"
+/>
 
 </LinearLayout>

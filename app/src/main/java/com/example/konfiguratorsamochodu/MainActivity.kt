@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.RadioGroup
 import android.widget.SeekBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         val checkBoxSiedzenia = findViewById<CheckBox>(R.id.checkBoxSiedzenia)
         val imageView = findViewById<ImageView>(R.id.imageView)
         val buttonKonfig = findViewById<Button>(R.id.buttonKonfig)
+        val textViewPodsumowanie = findViewById<TextView>(R.id.TextViewpodsumowanie)
 
         var rodzajAuta =""
         var autoZdjecie = R.drawable.suv
@@ -49,5 +51,13 @@ class MainActivity : AppCompatActivity() {
 
             imageView.setImageResource(autoZdjecie)
         }
+        buttonKonfig.setOnClickListener {
+            val Klima = if (checkBoxKlima.isChecked) "+ klimatyzacja" else "- klimatyzacja"
+            val Siedzenia = if (checkBoxSiedzenia.isChecked) "+ skorzane siedzenia" else "- skorzane siedzienia"
+
+
+            textViewPodsumowanie.text = "Wybrana konfiguracja: $rodzajAuta, $Klima, $Siedzenia"
+
     }
+}
 }
